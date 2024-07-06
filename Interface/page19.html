@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deception Analysis Dataset Interface</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        video, iframe {
+            width: 100%;
+            height: 500px;
+        }
+        .summary, .questions, .testimonials {
+            margin-top: 20px;
+        }
+        .testimonial {
+            cursor: pointer;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        .testimonial-content {
+            display: none;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+        .menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 250px;
+            height: 100%;
+            background: #333;
+            color: white;
+            padding: 20px;
+            overflow-y: auto;
+            transform: translateX(-250px);
+            transition: transform 0.3s;
+        }
+        .menu ul {
+            list-style: none;
+            padding: 0;
+        }
+        .menu li {
+            margin-bottom: 10px;
+        }
+        .menu a {
+            color: white;
+            text-decoration: none;
+        }
+        .menu-btn {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: #333;
+            color: white;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .menu-open .menu {
+            transform: translateX(0);
+        }
+        .menu-open .menu-btn {
+            left: 260px;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <h2>Video List</h2>
+        <ul>
+            <!-- Repeat this list item for each video -->
+            <li><a href="page1.html">1. INITIATION _ 2021 Award Winning Crime Thriller Short Film.mp4</a></li>
+            <li><a href="page2.html">2. The Incognito - The Mystery Of The Kidnapper _ Hindi Thriller Short Film _ Six Sigma Films.mp4
+            </a></li>
+            <li><a href="page3.html">3. Laxmi - Hindi Short Thriller Film
+            </a></li>
+            <li><a href="page4.html">4. The Last Ride _ Suspense Thriller Short Film 2020
+            </a></li>
+            <li><a href="page5.html">5. Rethink before sharing secrets with strangers - Aakhri Sawari (The Last Ride)
+            </a></li>
+            <li><a href="page6.html">6. When A Stranger Calls _ Based On A True Story
+            </a></li>
+            <li><a href="page7.html">7. Lift - Suspense Thriller _ Hindi Short Film
+            </a></li>
+            <li><a href="page8.html">8. The Damsel- Tale Of Revenge _ Hindi Thriller Short Film _ Award Winning Movie
+            </a></li>
+            <li><a href="page9.html">9. Missing _ A Crime Thriller Short Film
+            </a></li>
+            <li><a href="page10.html">10. Whiteout _ Single Take Thriller Short Film by Lance Edmands
+            </a></li>
+            <li><a href="page11.html">11. Comrade crunch
+            </a></li>
+            <li><a href="page12.html">12. CON- AMOR
+            </a></li>
+            <li><a href="page13.html">13. Delivery
+            </a></li>
+            <li><a href="page14.html">14. Do no harm
+            </a></li>
+            <li><a href="page15.html">15. Emtehan-exam
+            </a></li>
+            <li><a href="page16.html">16. Keep your Mouth Shut
+            </a></li>
+            <li><a href="page17.html">17. Omeleto_porcupine
+            </a></li>
+            <li><a href="page18.html">18. Prisoner and jailer _ Abu Salim Prison Massacre_ Libyan Short Film
+            </a></li>
+            <li><a href="page19.html">19. Stanhope </a></li>
+            <li><a href="page20.html">20. The_robbery </a></li>
+            <li><a href="page21.html">21. Cielo Dreams
+            </a></li>
+            <li><a href="page22.html">22. Manifest A God
+            </a></li>
+            <li><a href="page23.html">23. Carjacked
+            </a></li>
+            <li><a href="page24.html">24. The Witness
+            </a></li>
+            <li><a href="page25.html">26. Kapowski and the phoenix
+            </a></li>
+            <li><a href="page26.html">27. Brarkish_water </a></li>
+            <li><a href="page27.html">28. Bullet holes and blood
+            </a></li>
+            <li><a href="page28.html">29. LUCA
+            </a></li>
+            <li><a href="page29.html">30. The salon
+            </a></li>
+            <li><a href="page30.html">31. Interpretation by Lin Oeding
+            </a></li>
+            <li><a href="page31.html">32. The bypass 
+            </a></li>
+            <li><a href="page32.html">33. Amber
+            </a></li>
+            <li><a href="page33.html">34. Award Winning Hindi Short Film From Australia _ Bhram _  Suspense Thriller _ Six Sigma Films
+            </a></li>
+            <li><a href="page34.html">35. दिल्ली Night_Hindi short film_Thriller Film_ Mobile Filmmaking
+            </a></li>
+            <li><a href="page35.html">36. Paatr  - Psychological Thriller Short Film Ft. Sahil Anand
+            </a></li>
+            <li><a href="page36.html">37. A Simple Robbery (2020)
+            </a></li>
+            <li><a href="page37.html">38. BHAY (FEAR) _ AWARD WINNING SHORT FILM _ NINAD DESHPANDE
+            </a></li>
+            <li><a href="page38.html">39. CHASHMA  -  A Suspense Thriller Short Film
+            </a></li>
+            <li><a href="page39.html">40. An Unusual Day - Hindi, Suspense Short Film _ A painter and a saleswoman's story
+            </a></li>
+            <li><a href="page40.html">41. Tarqeeb (Gambit) – Hindi Thriller Short Film
+            </a></li>
+            <li><a href="page41.html">42. Commando </a></li>
+            <li><a href="page42.html">43. OLD RUG
+            </a></li>
+            <li><a href="page43.html">44. Night Shift - A neo noir short film
+            </a></li>
+            <li><a href="page44.html">45. RAJMA _  A SUSPENSE THRILLER SHORT HINDI FILM
+            </a></li>
+            <li><a href="page45.html">46. The Date _  Short Thriller Film
+            </a></li>
+            <li><a href="page46.html">47. TOLL NAKA _ BIKANA FILMS _ GARVIT CHOUHAN
+            </a></li>
+            <li><a href="page47.html">48. A Brief Case - A Hindi, Thriller Short Film _ some secrets can kill
+            </a></li>
+            <li><a href="page48.html">49. Subway robbers DON'T want to rob their _own people_. _ Short Film _Tribes_
+            </a></li>
+            <li><a href="page49.html">50. The_Child_and_the_Dead-vimeo-391735537-hls-fastly_skyfire-2117
+            </a></li>
+            <li><a href="page50.html">51. The_Cross_-_Windfire_Films_Presents_A_Short_Film_by_Tobias_Steiner-vimeo-160411059-dash-fastly_skyfire-video-c8e1bb82
+            </a></li>
+            <li><a href="page51.html">52. True_Justice_-_BA_Hons_Television_Production_Screen_Media_-_Year_3-vimeo-129889376-hls-fastly_skyfire-1435
+            </a></li>
+            <li><a href="page52.html">53. Twenty _Thirteen
+            </a></li>
+            <li><a href="page53.html">54. Collection_Street-vimeo-213286054-hls-fastly_skyfire-2244
+            </a></li>
+            <li><a href="page54.html">55. Fragments_2016-vimeo-169237642-dash-fastly_skyfire-video-884db3b9
+            </a></li>
+            <li><a href="page55.html">56. Minnesota_Nice_the_short_film-vimeo-51756005-hls-fastly_skyfire-2292
+            </a></li>
+            <li><a href="page56.html">57. PASSAGE_SHORT_FILM-vimeo-131455226-hls-fastly_skyfire-1927
+            </a></li>
+            <li><a href="page57.html">58. PROJECTIONS_SHORT_FILM-vimeo-30008496-hls-fastly_skyfire-2638
+            </a></li>
+            <li><a href="page58.html">59. SERGEY_S_FORTUNE-vimeo-263681073-hls-fastly_skyfire-1507
+            </a></li>
+            <li><a href="page59.html">60. Codes Abided (Short/Action/Crime)
+            </a></li>
+            <li><a href="page60.html">61. “The Way of Hard Friction” | Crime Action short film | 2015
+            </a></li>
+            <li><a href="page61.html">62. THE SCHOOL OF CRIME / LA ESCUELA DEL CRIMEN
+            </a></li>
+            <li><a href="page62.html">63. Tueur à gages | Short Film by Keon Reza Sheikhvand
+            </a></li>
+            <li><a href="page63.html">64. For Sale - Short Film
+            </a></li>
+            <li><a href="page64.html">65. True Crime
+            </a></li>
+            <li><a href="page65.html">66. Trooper
+            </a></li>
+            <li><a href="page66.html">67. Thriller Short Film  'Carroms' Pocket Films
+            </a></li>
+            <li><a href="page67.html">68. The Shrink - Thriller Short Film _ English
+            </a></li>
+            <li><a href="page68.html">69. Souvenir - A Serial-Killer On The Loose (Thriller Short Film)
+            </a></li>
+            <li><a href="page69.html">70. Umbrella - The story of a delivery boy which will leave you speechless
+            </a></li>
+            <li><a href="page70.html">71. Fields (2023) Drama Short Film
+            </a></li>
+            <li><a href="page71.html">72. True Crime (short film) - Writer / Director
+            </a></li>
+            <li><a href="page72.html">73. CID 1
+            </a></li>
+            <li><a href="page73.html">74. CID 2
+            </a></li>
+            <li><a href="page74.html">75. GREEN 
+            </a></li>
+            <li><a href="page75.html">76. CID 3 
+            </a></li>
+            <li><a href="page76.html">77. CID 4
+            </a></li>
+            <li><a href="page77.html">78. CID 5
+            </a></li>
+            <li><a href="page78.html">79. CID 6
+            </a></li>
+            <li><a href="page79.html">80. CID 7
+            </a></li>
+            <li><a href="page80.html">81. CID 8
+            </a></li>
+            <li><a href="page81.html">82. CID 9
+            </a></li>
+            <li><a href="page82.html">83. CID 10
+            </a></li>
+            <li><a href="page83.html">84. CID 11
+            </a></li>
+            <li><a href="page84.html">85. CID 12
+            </a></li>
+            <li><a href="page85.html">86. CID 13
+            </a></li>
+            <li><a href="page86.html">87. CID 15
+            </a></li>
+            <li><a href="page87.html">88. CID 16
+            </a></li>
+            <li><a href="page88.html">89. CID 17
+            </a></li>
+            <li><a href="page89.html">91. SWAD ANUSAR
+            </a></li>
+            <li><a href="page90.html">92. BLOWBACK
+            </a></li>
+            <li><a href="page91.html">93. One Bad Night - Short Film
+            </a></li>
+            <li><a href="page92.html">94. BROKER
+            </a></li>
+            <li><a href="page93.html">95. The Grand
+            </a></li>
+            <li><a href="page94.html">96. The streets of Los Angeles are a hotbed of racial tension that's about to burst. | Los Angeles 1991
+            </a></li>
+            <li><a href="page95.html">97. A mother struggles with bullies who torment her disabled daughter. | This Is Vanity
+            </a></li>
+            <li><a href="page96.html">98. A vigilante thief ransacks homes across West London, despite being hunted by the police. | The Fox
+            </a></li>
+            <li><a href="page97.html">99. A stranger takes a family hostage, then makes a mysterious demand. | The Stranger
+            </a></li>
+            <li><a href="page98.html">100. A father tries to find his young daughter after she goes missing during a traffic jam. | Gridlock
+            </a></li>
+            <li><a href="page99.html">101. A famous artist has an idea for a controversial project. Then a detective investigates.
+            </a></li>
+            <li><a href="page100.html">102. 2 young women pick up a mysterious hitchhiker
+            </a></li>
+            <li><a href="page101.html">103. Ohio
+            </a></li>
+            <li><a href="page102.html">104. Munkie
+            </a></li>
+            <li><a href="page103.html">105. Thriller Short Film - The Caller
+            </a></li>
+            <li><a href="page104.html">106. Little Terrorist
+            </a></li>
+            <li><a href="page105.html">107. Psychological Short Film "STRANDED" presented by Exit 44 Entertainment
+            </a></li>
+            <li><a href="page106.html">108. Crime Patrol _ Maya
+            </a></li>
+            <li><a href="page107.html">109. fake profession
+            </a></li>
+            <li><a href="page108.html">110. The policemen
+            </a></li>
+            <li><a href="page109.html">111. The Daughter-in-law
+            </a></li>
+            <li><a href="page110.html">112. Organic Fragments (Crime Thriller)
+            </a></li>
+            <li><a href="page111.html">113. ohio2
+            </a></li>
+            <li><a href="page112.html">114. Excerpt from -Vendetta No Conscience No Mercy
+            </a></li>
+            <li><a href="page113.html">115. THE DEADLINE
+            </a></li>
+            <li><a href="page114.html">29. Double blind 
+            </a></li>
+            <li><a href="page115.html">117. R U S T Y // Short Film
+            </a></li>
+            <li><a href="page116.html">118. Hindi Short Film - Charitra Varnan - A woman in distress and a cab driver's story
+            </a></li>
+            <li><a href="page117.html">119. A young girl must choose the fate of an oil rig worker who killed her father. | Seven
+            </a></li>
+            <li><a href="page118.html">120. A diner owner has 24 hours to save his family from the criminal underworld. | Bobby
+            </a></li>
+            <li><a href="page119.html">121. SIX_FEET_DEEP-vimeo-46973160-hls-fastly_skyfire-849
+            </a></li>
+            <li><a href="page120.html">122. Down in the third
+            </a></li>
+            <li><a href="page121.html">123. Dame tus ojos REEL Music
+            </a></li>
+            <li><a href="page122.html">124. Bon Voyage
+            </a></li>
+            <li><a href="page123.html">125. Thriller Short Film - SMS
+            </a></li>
+            <li><a href="page124.html">126. HOOKED
+            </a></li>
+            <li><a href="page125.html">127. The Cycle - 47 Hour Film Challenge Submission
+            </a></li>
+            <li><a href="page126.html">128. The Ruins
+            </a></li>
+            <li><a href="page127.html">129. Tribute To Arthur
+            </a></li>
+            <li><a href="page128.html">130. The_Pact
+            </a></li>
+            <li><a href="page129.html">131. Signature | Short Film | Univeristy of Arizona
+            </a></li>
+            <li><a href="page130.html">132. CID 18
+            </a></li>
+            <li><a href="page131.html">133. CID 19
+            </a></li>
+            <li><a href="page132.html">134. CID 20
+            </a></li>
+            <li><a href="page133.html">135. Chaara | Award winning short film | Alam Khan | Adanj Production
+            </a></li>
+            <li><a href="page134.html">136. Fulcrum
+            </a></li>
+            <li><a href="page135.html">137. Transgression
+            </a></li>
+            <li><a href="page136.html">138. Requiem
+            </a></li>
+            <li><a href="page137.html">139. WHERE THE SHADOWS FALL | A Short Film
+            </a></li>
+            <li><a href="page138.html">140. Petty Crime
+            </a></li>
+            <li><a href="page139.html">141. A teenage girl discovers her male friends' secret group chat. | Locker Room
+            </a></li>
+            <li><a href="page140.html">142. KIRDAAR - A Short Film _ Suspense Thriller Short Film _ Uniscope Films
+            </a></li>
+            <li><a href="page141.html">143. dubki
+            </a></li>
+            <li><a href="page142.html">144. SORRY
+            </a></li>
+            <li><a href="page143.html">145. Jet _ Award-Winning Thriller Short Film _ Jordan Chesney
+            </a></li>
+            <li><a href="page144.html">146. BHORA KALAN
+            </a></li>
+            <li><a href="page145.html">147. THE LAST TAKE
+            </a></li>
+            <li><a href="page146.html">148. Chhapal
+            </a></li>
+            <li><a href="page147.html">149. Eyes of Isaac
+            </a></li>
+            <li><a href="page148.html">150. I am sorry
+            </a></li>
+            <li><a href="page149.html">151. monster never die 
+            </a></li>
+            <li><a href="page150.html"> </a></li>
+            <li><a href="page151.html"> </a></li>
+            <li><a href="page152.html"> </a></li>
+            <li><a href="page153.html"> </a></li>
+            <li><a href="page154.html"> </a></li>
+        </ul>
+    </div>
+    <div class="menu-btn" onclick="toggleMenu()">☰ Menu</div>
+    <div class="container">
+        <h1>Stanhope</h1>
+        <iframe src="https://drive.google.com/file/d/1FDFcW-mdzf02Fut3kC2mSmXeLIiDk-p0/preview" allow="autoplay"></iframe>
+        
+        <div class="summary">
+            <h2>Summary</h2>
+            <p>
+                A Motorcycle rider came on his bike and stopped his bike at a crossing, he was wearing a helmet when a boy named Stanhope,13 years old, came from the sideway and pulled out a pistol and shot and killed the rider then he stood near the fallen bike rider and a van approached and stanhope entered the van. There were three other men in the van and they all seemed to be proud of Stanhope’s act. Then the van drove to Stanhope’s house, Stanhope stepped out and changed his clothes from the back of the van put some water on his face and picked up his basketball, and walked toward his apartment as if he had come from a basketball match. Stanhope had two younger brothers, one younger sister, and an elder sister and he didn’t have a father but a mother who had three boyfriends one of whom was Marvin who used to abuse his mother and his brother sisters. Stanhope used to draw the painting of the people he killed and at the age of 13, he already killed 6 people he used to think of himself as a hero helping people who kill those who trouble others. His mother used to work 2 jobs and was mostly raised by his grandmother. Stanhope was once gifted a skateboard by his grandma which he distinctly remembers as his grandma never used to buy him anything, not sneakers chocolate not a bag of chips, and not even a dictionary for school. Once Stanhope was riding his skateboard from Brooklyn to mid-town Manhattan and he ran into a boy who asked him for a ride to his skateboard Stanhope agreed but that boy never returned and took the skateboard with him. Stanhope returned to his home without a skateboard and tried to sneak in but he was spotted by his grandma and his grandma called and asked where his skateboard was he said that some other boy had taken it. His grandma told him not to return to the house without the skateboard. Then Stanhope goes to the boy who took his skateboard to retrieve the skateboard but as he took his skateboard back he was brutely beaten by that boy and two other boys. Then he returns to his home with the skateboard and his grandma notices his injuries, and his torn clothes and sees that some of his teeth have been knocked out. Then his grandma tells him to go back and bring her 4 of their teeth. This time both Stanhope and his grandma go in the car to those boys and after reaching the park in which that boy was Stanhope steps out of the car picks a brick and hits that boy who took his skateboard on his head. Then he pulls out his teeth and goes back into the car where his grandma was and shows her that he got 6 of his teeth and his grandma was happy seeing that. The next day on the news they found out that the boy that Stanhope hit died after seeing the news Stanhope looked at her grandma and noticed that she was smiling and happy which made Stanhope think that killing was not such a big offense.<br><br>  
+                Stanhope was at school and his teacher was dismissing the class while distributing the homework When Stanhope was leaving the class his teacher stopped him and said that he knew what he was doing in the class and that Stanhope was not paying any attention to his class then he asked stanhope to handover his notepad. The notepad had the drawings that Stanhope made and the teacher was really impressed with them and asked Stanhope to showcase them to people and tell the art department about them but Stanhope said that these artworks were for him only and then after some talk, he left the class. His teacher went to Stanhope’s desk pulled out some drawings from under the desk and took one of them with him and left. Then after school, Stanhope started hanging out with his friends they picked up some eggs from the store, and they threw those at some pizza shop gate and the owner started running behind them, then they started punching random people in the street. Then they all went to their homes. The next day at school when the teacher was checking the homework one of the students told Stanhope that he didn’t know that Stanhope liked to draw while holding the school’s art magazine it had the drawing that the teacher took from Stanhope’s desk. Stanhope saw that drawing and started shouting and cursing at the teacher as he was the one who published his work even after saying no. Then the teacher sends Stanhope out of the room and Stanhope leaves the class. Then while returning home Stanhope saw Marvin sitting in a café Stanhope entered the Café pulled out the pistol shot Marvin four times, and killed him. Then he goes to a store a sees that his mother was caught by two police officers. Then he goes to his home and takes his younger sister and brothers with him and goes to the house of his teacher. One of the students of the School took the art magazine to his home his father used to work in the police and they noticed that the drawing on the magazine was similar to the crime scene of the motorcycle rider murder he was investigating. 
+            </p>
+        </div>
+
+        <div class="questions">
+            <h2>Questions</h2>
+            <p>
+                Q1. What happened when the bike rider was standing at the traffic light? <br>
+                Q2. What did Stanhope’s granny buy him as a gift and how did he describe his granny’s habit of buying things for him? <br>
+                Q3. What happened when Stanhope was riding his skateboard from Brooklyn to midtown Manhattan?<br>
+                Q4. What happened after Stanhope returned home without his skateboard? <br>
+                Q5. What happened when Stanhope goes to the boy who stole his Stakeboat to take it back?<br>
+                Q6. Describe the granny’s reaction when Stanhope returned home with his skateboard and injuries? <br>
+                Q7. What happened after granny and Stanhope went to the boy who stole Stanhope’s Skateboard and what did they find out later? <br>
+                Q8. Describe the conversation between Stanhope and his teacher?<br>
+                Q9. What did Stanhope and his friends do after school?<br>
+                Q10. What happened when the teacher was checking the homework? <br>
+                Q11. What did Stanhope do after he entered the café? <br>
+                Q12. Describe Stanhope’s action after murdering Marvin? <br>
+            </p>
+        </div>
+
+        <div class="testimonials">
+            <h2>Testimonials</h2>
+            <div class="testimonial" onclick="toggleTestimonial('testimonial1')">Testimonial 1</div>
+            <div id="testimonial1" class="testimonial-content">
+
+                <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vS5JAKXPSx70JtlUPRhofHQmvKCocOVKProP8TaB6yWNMBwfn6Djn9lO_HZ7mbbZ7cVMbib6tu1RS-g/pubhtml?widget=true&amp;headers=false"></iframe>
+                
+            </div>
+            <div class="testimonial" onclick="toggleTestimonial('testimonial2')">Testimonial 2</div>
+            <div id="testimonial2" class="testimonial-content">
+             
+                <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQnmmVZZhNji_9FN-wqiQM_ypUTVjjzK-4VtECyQO38ArXUNI4vB6eEXTDRT6aIS4a1Ru3tf1BDcGVe/pubhtml?widget=true&amp;headers=false"></iframe>
+                
+            </div>
+            <div class="testimonial" onclick="toggleTestimonial('testimonial3')">Testimonial 3</div>
+            <div id="testimonial3" class="testimonial-content">
+                
+                <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTrNyRHnaDl_GQtEp-VkSQ0QWmuQrvs0Q4-Gd0nD8vAxwc59VJY9A1gUt4jdVxBCX_MsIJGeUyZSOxW/pubhtml?widget=true&amp;headers=false"></iframe>
+            
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            document.body.classList.toggle('menu-open');
+        }
+
+        function toggleTestimonial(id) {
+            var content = document.getElementById(id);
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
