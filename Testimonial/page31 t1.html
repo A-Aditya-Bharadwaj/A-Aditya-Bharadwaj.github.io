@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.container {
+  border: 2px solid #dedede;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.darker {
+  border-color: #ccc;
+  background-color: #ddd;
+}
+
+.container::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.container img {
+  float: left;
+  max-width: 60px;
+  width: 100%;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+.container img.right {
+  float: right;
+  margin-left: 20px;
+  margin-right:0;
+}
+
+.alignleft {
+
+float: left;
+}
+
+.alignright {
+
+float: right;
+}
+
+.time-right {
+  float: right;
+  color: #aaa;
+}
+
+.time-left {
+  float: left;
+  color: #999;
+}
+</style>
+</head>
+<body>
+
+<div>
+    <h2 class="alignleft">Interrogator</h2>
+    <h2 class="alignright">Interrogee</h2>    
+    <br style="clear:both;" />
+</div>
+
+<div class="container">
+  <img src="https://cdn.vectorstock.com/i/1000v/23/52/detective-avatar-icon-vector-9762352.avif" alt="Avatar" style="width:100%;">
+  <p id = "utterence0"></p>
+  <span id = "timestamp0" class="time-right"></span>
+</div>
+
+<div class="container darker">
+<img src="https://as2.ftcdn.net/v2/jpg/03/13/41/79/1000_F_313417936_3yYpbAkSsYXGi8llKuhAgIF5H4rSdNgX.jpg" alt="Avatar" class="right" style="width:100%;">
+<p id = "utterence1"></p>
+<span id = "timestamp1" class="time-left"></span>
+</div>
+
+<div class="container">
+<img src="https://cdn.vectorstock.com/i/1000v/23/52/detective-avatar-icon-vector-9762352.avif" alt="Avatar" style="width:100%;">
+<p id = "utterence2"></p>
+<span id = "timestamp2" class="time-right"></span>
+</div>
+
+<div class="container darker">
+<img src="https://as2.ftcdn.net/v2/jpg/03/13/41/79/1000_F_313417936_3yYpbAkSsYXGi8llKuhAgIF5H4rSdNgX.jpg" alt="Avatar" class="right" style="width:100%;">
+<p id = "utterence3"></p>
+<span id = "timestamp3" class="time-left"></span>
+</div>
+
+<div class="container">
+<img src="https://cdn.vectorstock.com/i/1000v/23/52/detective-avatar-icon-vector-9762352.avif" alt="Avatar" style="width:100%;">
+<p id = "utterence4"></p>
+<span id = "timestamp4" class="time-right"></span>
+</div>
+
+<div class="container darker">
+<img src="https://as2.ftcdn.net/v2/jpg/03/13/41/79/1000_F_313417936_3yYpbAkSsYXGi8llKuhAgIF5H4rSdNgX.jpg" alt="Avatar" class="right" style="width:100%;">
+<p id = "utterence5"></p>
+<span id = "timestamp5" class="time-left"></span>
+</div>
+
+<div class="container">
+<img src="https://cdn.vectorstock.com/i/1000v/23/52/detective-avatar-icon-vector-9762352.avif" alt="Avatar" style="width:100%;">
+<p id = "utterence6"></p>
+<span id = "timestamp6" class="time-right"></span>
+</div>
+
+<div class="container darker">
+<img src="https://as2.ftcdn.net/v2/jpg/03/13/41/79/1000_F_313417936_3yYpbAkSsYXGi8llKuhAgIF5H4rSdNgX.jpg" alt="Avatar" class="right" style="width:100%;">
+<p id = "utterence7"></p>
+<span id = "timestamp7" class="time-left"></span>
+</div>
+
+<div class="container">
+<img src="https://cdn.vectorstock.com/i/1000v/23/52/detective-avatar-icon-vector-9762352.avif" alt="Avatar" style="width:100%;">
+<p id = "utterence8"></p>
+<span id = "timestamp8" class="time-right"></span>
+</div>
+
+<div class="container darker">
+<img src="https://as2.ftcdn.net/v2/jpg/03/13/41/79/1000_F_313417936_3yYpbAkSsYXGi8llKuhAgIF5H4rSdNgX.jpg" alt="Avatar" class="right" style="width:100%;">
+<p id = "utterence9"></p>
+<span id = "timestamp9" class="time-left"></span>
+</div>
+
+<div class="container">
+<img src="https://cdn.vectorstock.com/i/1000v/23/52/detective-avatar-icon-vector-9762352.avif" alt="Avatar" style="width:100%;">
+<p id = "utterence10"></p>
+<span id = "timestamp10" class="time-right"></span>
+</div>
+
+<div class="container darker">
+<img src="https://as2.ftcdn.net/v2/jpg/03/13/41/79/1000_F_313417936_3yYpbAkSsYXGi8llKuhAgIF5H4rSdNgX.jpg" alt="Avatar" class="right" style="width:100%;">
+<p id = "utterence11"></p>
+<span id = "timestamp11" class="time-left"></span>
+</div>
+
+<div class="container">
+<img src="https://cdn.vectorstock.com/i/1000v/23/52/detective-avatar-icon-vector-9762352.avif" alt="Avatar" style="width:100%;">
+<p id = "utterence12"></p>
+<span id = "timestamp12" class="time-right"></span>
+</div>
+
+<div class="container darker">
+<img src="https://as2.ftcdn.net/v2/jpg/03/13/41/79/1000_F_313417936_3yYpbAkSsYXGi8llKuhAgIF5H4rSdNgX.jpg" alt="Avatar" class="right" style="width:100%;">
+<p id = "utterence13"></p>
+<span id = "timestamp13" class="time-left"></span>
+</div>
+
+<div class="container">
+<img src="https://cdn.vectorstock.com/i/1000v/23/52/detective-avatar-icon-vector-9762352.avif" alt="Avatar" style="width:100%;">
+<p id = "utterence14"></p>
+<span id = "timestamp14" class="time-right"></span>
+</div>
+
+<div class="container darker">
+<img src="https://as2.ftcdn.net/v2/jpg/03/13/41/79/1000_F_313417936_3yYpbAkSsYXGi8llKuhAgIF5H4rSdNgX.jpg" alt="Avatar" class="right" style="width:100%;">
+<p id = "utterence15"></p>
+<span id = "timestamp15" class="time-left"></span>
+</div>
+
+<div class="container">
+<img src="https://cdn.vectorstock.com/i/1000v/23/52/detective-avatar-icon-vector-9762352.avif" alt="Avatar" style="width:100%;">
+<p id = "utterence16"></p>
+<span id = "timestamp16" class="time-right"></span>
+</div>
+
+<div class="container darker">
+<img src="https://as2.ftcdn.net/v2/jpg/03/13/41/79/1000_F_313417936_3yYpbAkSsYXGi8llKuhAgIF5H4rSdNgX.jpg" alt="Avatar" class="right" style="width:100%;">
+<p id = "utterence17"></p>
+<span id = "timestamp17" class="time-left"></span>
+</div>
+
+<div class="container">
+<img src="https://cdn.vectorstock.com/i/1000v/23/52/detective-avatar-icon-vector-9762352.avif" alt="Avatar" style="width:100%;">
+<p id = "utterence18"></p>
+<span id = "timestamp18" class="time-right"></span>
+</div>
+
+<div class="container darker">
+<img src="https://as2.ftcdn.net/v2/jpg/03/13/41/79/1000_F_313417936_3yYpbAkSsYXGi8llKuhAgIF5H4rSdNgX.jpg" alt="Avatar" class="right" style="width:100%;">
+<p id = "utterence19"></p>
+<span id = "timestamp19" class="time-left"></span>
+</div>
+
+<div class="container">
+<img src="https://cdn.vectorstock.com/i/1000v/23/52/detective-avatar-icon-vector-9762352.avif" alt="Avatar" style="width:100%;">
+<p id = "utterence20"></p>
+<span id = "timestamp20" class="time-right"></span>
+</div>
+
+<div class="container darker">
+<img src="https://as2.ftcdn.net/v2/jpg/03/13/41/79/1000_F_313417936_3yYpbAkSsYXGi8llKuhAgIF5H4rSdNgX.jpg" alt="Avatar" class="right" style="width:100%;">
+<p id = "utterence21"></p>
+<span id = "timestamp21" class="time-left"></span>
+</div>
+
+<div class="container">
+<img src="https://cdn.vectorstock.com/i/1000v/23/52/detective-avatar-icon-vector-9762352.avif" alt="Avatar" style="width:100%;">
+<p id = "utterence22"></p>
+<span id = "timestamp22" class="time-right"></span>
+</div>
+
+<div class="container darker">
+<img src="https://as2.ftcdn.net/v2/jpg/03/13/41/79/1000_F_313417936_3yYpbAkSsYXGi8llKuhAgIF5H4rSdNgX.jpg" alt="Avatar" class="right" style="width:100%;">
+<p id = "utterence23"></p>
+<span id = "timestamp23" class="time-left"></span>
+</div>
+
+<div class="container">
+<img src="https://cdn.vectorstock.com/i/1000v/23/52/detective-avatar-icon-vector-9762352.avif" alt="Avatar" style="width:100%;">
+<p id = "utterence24"></p>
+<span id = "timestamp24" class="time-right"></span>
+</div>
+
+<div class="container darker">
+<img src="https://as2.ftcdn.net/v2/jpg/03/13/41/79/1000_F_313417936_3yYpbAkSsYXGi8llKuhAgIF5H4rSdNgX.jpg" alt="Avatar" class="right" style="width:100%;">
+<p id = "utterence25"></p>
+<span id = "timestamp25" class="time-left"></span>
+</div>
+
+<div class="container">
+<img src="https://cdn.vectorstock.com/i/1000v/23/52/detective-avatar-icon-vector-9762352.avif" alt="Avatar" style="width:100%;">
+<p id = "utterence26"></p>
+<span id = "timestamp26" class="time-right"></span>
+</div>
+
+<div class="container darker">
+<img src="https://as2.ftcdn.net/v2/jpg/03/13/41/79/1000_F_313417936_3yYpbAkSsYXGi8llKuhAgIF5H4rSdNgX.jpg" alt="Avatar" class="right" style="width:100%;">
+<p id = "utterence27"></p>
+<span id = "timestamp27" class="time-left"></span>
+</div>
+
+<div class="container">
+<img src="https://cdn.vectorstock.com/i/1000v/23/52/detective-avatar-icon-vector-9762352.avif" alt="Avatar" style="width:100%;">
+<p id = "utterence28"></p>
+<span id = "timestamp28" class="time-right"></span>
+</div>
+
+<div class="container darker">
+<img src="https://as2.ftcdn.net/v2/jpg/03/13/41/79/1000_F_313417936_3yYpbAkSsYXGi8llKuhAgIF5H4rSdNgX.jpg" alt="Avatar" class="right" style="width:100%;">
+<p id = "utterence29"></p>
+<span id = "timestamp29" class="time-left"></span>
+</div>
+
+<div class="container">
+<img src="https://cdn.vectorstock.com/i/1000v/23/52/detective-avatar-icon-vector-9762352.avif" alt="Avatar" style="width:100%;">
+<p id = "utterence30"></p>
+<span id = "timestamp30" class="time-right"></span>
+</div>
+
+<div class="container darker">
+<img src="https://as2.ftcdn.net/v2/jpg/03/13/41/79/1000_F_313417936_3yYpbAkSsYXGi8llKuhAgIF5H4rSdNgX.jpg" alt="Avatar" class="right" style="width:100%;">
+<p id = "utterence31"></p>
+<span id = "timestamp31" class="time-left"></span>
+</div>
+
+<div class="container">
+<img src="https://cdn.vectorstock.com/i/1000v/23/52/detective-avatar-icon-vector-9762352.avif" alt="Avatar" style="width:100%;">
+<p id = "utterence32"></p>
+<span id = "timestamp32" class="time-right"></span>
+</div>
+
+<div class="container darker">
+<img src="https://as2.ftcdn.net/v2/jpg/03/13/41/79/1000_F_313417936_3yYpbAkSsYXGi8llKuhAgIF5H4rSdNgX.jpg" alt="Avatar" class="right" style="width:100%;">
+<p id = "utterence33"></p>
+<span id = "timestamp33" class="time-left"></span>
+</div>
+
+<div class="container">
+<img src="https://cdn.vectorstock.com/i/1000v/23/52/detective-avatar-icon-vector-9762352.avif" alt="Avatar" style="width:100%;">
+<p id = "utterence34"></p>
+<span id = "timestamp34" class="time-right"></span>
+</div>
+
+<div class="container darker">
+<img src="https://as2.ftcdn.net/v2/jpg/03/13/41/79/1000_F_313417936_3yYpbAkSsYXGi8llKuhAgIF5H4rSdNgX.jpg" alt="Avatar" class="right" style="width:100%;">
+<p id = "utterence35"></p>
+<span id = "timestamp35" class="time-left"></span>
+</div>
+
+<div class="container">
+<img src="https://cdn.vectorstock.com/i/1000v/23/52/detective-avatar-icon-vector-9762352.avif" alt="Avatar" style="width:100%;">
+<p id = "utterence36"></p>
+<span id = "timestamp36" class="time-right"></span>
+</div>
+
+<div class="container darker">
+<img src="https://as2.ftcdn.net/v2/jpg/03/13/41/79/1000_F_313417936_3yYpbAkSsYXGi8llKuhAgIF5H4rSdNgX.jpg" alt="Avatar" class="right" style="width:100%;">
+<p id = "utterence37"></p>
+<span id = "timestamp37" class="time-left"></span>
+</div>
+
+<div class="container">
+<img src="https://cdn.vectorstock.com/i/1000v/23/52/detective-avatar-icon-vector-9762352.avif" alt="Avatar" style="width:100%;">
+<p id = "utterence38"></p>
+<span id = "timestamp38" class="time-right"></span>
+</div>
+
+<div class="container darker">
+<img src="https://as2.ftcdn.net/v2/jpg/03/13/41/79/1000_F_313417936_3yYpbAkSsYXGi8llKuhAgIF5H4rSdNgX.jpg" alt="Avatar" class="right" style="width:100%;">
+<p id = "utterence39"></p>
+<span id = "timestamp39" class="time-left"></span>
+</div>
+
+<div class="container">
+<img src="https://cdn.vectorstock.com/i/1000v/23/52/detective-avatar-icon-vector-9762352.avif" alt="Avatar" style="width:100%;">
+<p id = "utterence40"></p>
+<span id = "timestamp40" class="time-right"></span>
+</div>
+
+<div class="container darker">
+<img src="https://as2.ftcdn.net/v2/jpg/03/13/41/79/1000_F_313417936_3yYpbAkSsYXGi8llKuhAgIF5H4rSdNgX.jpg" alt="Avatar" class="right" style="width:100%;">
+<p id = "utterence41"></p>
+<span id = "timestamp41" class="time-left"></span>
+</div>
+
+<div class="container">
+<img src="https://cdn.vectorstock.com/i/1000v/23/52/detective-avatar-icon-vector-9762352.avif" alt="Avatar" style="width:100%;">
+<p id = "utterence42"></p>
+<span id = "timestamp42" class="time-right"></span>
+</div>
+
+<div class="container darker">
+<img src="https://as2.ftcdn.net/v2/jpg/03/13/41/79/1000_F_313417936_3yYpbAkSsYXGi8llKuhAgIF5H4rSdNgX.jpg" alt="Avatar" class="right" style="width:100%;">
+<p id = "utterence43"></p>
+<span id = "timestamp43" class="time-left"></span>
+</div>
+
+<div class="container">
+<img src="https://cdn.vectorstock.com/i/1000v/23/52/detective-avatar-icon-vector-9762352.avif" alt="Avatar" style="width:100%;">
+<p id = "utterence44"></p>
+<span id = "timestamp44" class="time-right"></span>
+</div>
+
+<div class="container darker">
+<img src="https://as2.ftcdn.net/v2/jpg/03/13/41/79/1000_F_313417936_3yYpbAkSsYXGi8llKuhAgIF5H4rSdNgX.jpg" alt="Avatar" class="right" style="width:100%;">
+<p id = "utterence45"></p>
+<span id = "timestamp45" class="time-left"></span>
+</div>
+
+<div class="container">
+<img src="https://cdn.vectorstock.com/i/1000v/23/52/detective-avatar-icon-vector-9762352.avif" alt="Avatar" style="width:100%;">
+<p id = "utterence46"></p>
+<span id = "timestamp46" class="time-right"></span>
+</div>
+
+<div class="container darker">
+<img src="https://as2.ftcdn.net/v2/jpg/03/13/41/79/1000_F_313417936_3yYpbAkSsYXGi8llKuhAgIF5H4rSdNgX.jpg" alt="Avatar" class="right" style="width:100%;">
+<p id = "utterence47"></p>
+<span id = "timestamp47" class="time-left"></span>
+</div>
+
+<div class="container">
+<img src="https://cdn.vectorstock.com/i/1000v/23/52/detective-avatar-icon-vector-9762352.avif" alt="Avatar" style="width:100%;">
+<p id = "utterence48"></p>
+<span id = "timestamp48" class="time-right"></span>
+</div>
+
+<div class="container darker">
+<img src="https://as2.ftcdn.net/v2/jpg/03/13/41/79/1000_F_313417936_3yYpbAkSsYXGi8llKuhAgIF5H4rSdNgX.jpg" alt="Avatar" class="right" style="width:100%;">
+<p id = "utterence49"></p>
+<span id = "timestamp49" class="time-left"></span>
+</div>
+
+<div class="container">
+<img src="https://cdn.vectorstock.com/i/1000v/23/52/detective-avatar-icon-vector-9762352.avif" alt="Avatar" style="width:100%;">
+<p id = "utterence50"></p>
+<span id = "timestamp50" class="time-right"></span>
+</div>
+
+<div class="container darker">
+<img src="https://as2.ftcdn.net/v2/jpg/03/13/41/79/1000_F_313417936_3yYpbAkSsYXGi8llKuhAgIF5H4rSdNgX.jpg" alt="Avatar" class="right" style="width:100%;">
+<p id = "utterence51"></p>
+<span id = "timestamp51" class="time-left"></span>
+</div>
+
+<div class="container">
+<img src="https://cdn.vectorstock.com/i/1000v/23/52/detective-avatar-icon-vector-9762352.avif" alt="Avatar" style="width:100%;">
+<p id = "utterence52"></p>
+<span id = "timestamp52" class="time-right"></span>
+</div>
+
+<div class="container darker">
+<img src="https://as2.ftcdn.net/v2/jpg/03/13/41/79/1000_F_313417936_3yYpbAkSsYXGi8llKuhAgIF5H4rSdNgX.jpg" alt="Avatar" class="right" style="width:100%;">
+<p id = "utterence53"></p>
+<span id = "timestamp53" class="time-left"></span>
+</div>
+
+<div class="container">
+<img src="https://cdn.vectorstock.com/i/1000v/23/52/detective-avatar-icon-vector-9762352.avif" alt="Avatar" style="width:100%;">
+<p id = "utterence54"></p>
+<span id = "timestamp54" class="time-right"></span>
+</div>
+
+<div class="container darker">
+<img src="https://as2.ftcdn.net/v2/jpg/03/13/41/79/1000_F_313417936_3yYpbAkSsYXGi8llKuhAgIF5H4rSdNgX.jpg" alt="Avatar" class="right" style="width:100%;">
+<p id = "utterence55"></p>
+<span id = "timestamp55" class="time-left"></span>
+</div>
+
+<div class="container">
+<img src="https://cdn.vectorstock.com/i/1000v/23/52/detective-avatar-icon-vector-9762352.avif" alt="Avatar" style="width:100%;">
+<p id = "utterence56"></p>
+<span id = "timestamp56" class="time-right"></span>
+</div>
+
+<div class="container darker">
+<img src="https://as2.ftcdn.net/v2/jpg/03/13/41/79/1000_F_313417936_3yYpbAkSsYXGi8llKuhAgIF5H4rSdNgX.jpg" alt="Avatar" class="right" style="width:100%;">
+<p id = "utterence57"></p>
+<span id = "timestamp57" class="time-left"></span>
+</div>
+
+<div class="container">
+<img src="https://cdn.vectorstock.com/i/1000v/23/52/detective-avatar-icon-vector-9762352.avif" alt="Avatar" style="width:100%;">
+<p id = "utterence58"></p>
+<span id = "timestamp58" class="time-right"></span>
+</div>
+
+<div class="container darker">
+<img src="https://as2.ftcdn.net/v2/jpg/03/13/41/79/1000_F_313417936_3yYpbAkSsYXGi8llKuhAgIF5H4rSdNgX.jpg" alt="Avatar" class="right" style="width:100%;">
+<p id = "utterence59"></p>
+<span id = "timestamp59" class="time-left"></span>
+</div>
+
+<div class="container">
+<img src="https://cdn.vectorstock.com/i/1000v/23/52/detective-avatar-icon-vector-9762352.avif" alt="Avatar" style="width:100%;">
+<p id = "utterence60"></p>
+<span id = "timestamp60" class="time-right"></span>
+</div>
+
+<div class="container darker">
+<img src="https://as2.ftcdn.net/v2/jpg/03/13/41/79/1000_F_313417936_3yYpbAkSsYXGi8llKuhAgIF5H4rSdNgX.jpg" alt="Avatar" class="right" style="width:100%;">
+<p id = "utterence61"></p>
+<span id = "timestamp61" class="time-left"></span>
+</div>
+
+<div class="container">
+<img src="https://cdn.vectorstock.com/i/1000v/23/52/detective-avatar-icon-vector-9762352.avif" alt="Avatar" style="width:100%;">
+<p id = "utterence62"></p>
+<span id = "timestamp62" class="time-right"></span>
+</div>
+
+<div class="container darker">
+<img src="https://as2.ftcdn.net/v2/jpg/03/13/41/79/1000_F_313417936_3yYpbAkSsYXGi8llKuhAgIF5H4rSdNgX.jpg" alt="Avatar" class="right" style="width:100%;">
+<p id = "utterence63"></p>
+<span id = "timestamp63" class="time-left"></span>
+</div>
+
+<div class="container">
+<img src="https://cdn.vectorstock.com/i/1000v/23/52/detective-avatar-icon-vector-9762352.avif" alt="Avatar" style="width:100%;">
+<p id = "utterence64"></p>
+<span id = "timestamp64" class="time-right"></span>
+</div>
+
+<div class="container darker">
+<img src="https://as2.ftcdn.net/v2/jpg/03/13/41/79/1000_F_313417936_3yYpbAkSsYXGi8llKuhAgIF5H4rSdNgX.jpg" alt="Avatar" class="right" style="width:100%;">
+<p id = "utterence65"></p>
+<span id = "timestamp65" class="time-left"></span>
+</div>
+
+<div class="container">
+<img src="https://cdn.vectorstock.com/i/1000v/23/52/detective-avatar-icon-vector-9762352.avif" alt="Avatar" style="width:100%;">
+<p id = "utterence66"></p>
+<span id = "timestamp66" class="time-right"></span>
+</div>
+
+<div class="container darker">
+<img src="https://as2.ftcdn.net/v2/jpg/03/13/41/79/1000_F_313417936_3yYpbAkSsYXGi8llKuhAgIF5H4rSdNgX.jpg" alt="Avatar" class="right" style="width:100%;">
+<p id = "utterence67"></p>
+<span id = "timestamp67" class="time-left"></span>
+</div>
+
+<div class="container">
+<img src="https://cdn.vectorstock.com/i/1000v/23/52/detective-avatar-icon-vector-9762352.avif" alt="Avatar" style="width:100%;">
+<p id = "utterence68"></p>
+<span id = "timestamp68" class="time-right"></span>
+</div>
+
+<div class="container darker">
+<img src="https://as2.ftcdn.net/v2/jpg/03/13/41/79/1000_F_313417936_3yYpbAkSsYXGi8llKuhAgIF5H4rSdNgX.jpg" alt="Avatar" class="right" style="width:100%;">
+<p id = "utterence69"></p>
+<span id = "timestamp69" class="time-left"></span>
+</div>
+
+<div class="container">
+<img src="https://cdn.vectorstock.com/i/1000v/23/52/detective-avatar-icon-vector-9762352.avif" alt="Avatar" style="width:100%;">
+<p id = "utterence70"></p>
+<span id = "timestamp70" class="time-right"></span>
+</div>
+
+<div class="container darker">
+<img src="https://as2.ftcdn.net/v2/jpg/03/13/41/79/1000_F_313417936_3yYpbAkSsYXGi8llKuhAgIF5H4rSdNgX.jpg" alt="Avatar" class="right" style="width:100%;">
+<p id = "utterence71"></p>
+<span id = "timestamp71" class="time-left"></span>
+</div>
+
+<div class="container">
+<img src="https://cdn.vectorstock.com/i/1000v/23/52/detective-avatar-icon-vector-9762352.avif" alt="Avatar" style="width:100%;">
+<p id = "utterence72"></p>
+<span id = "timestamp72" class="time-right"></span>
+</div>
+
+<div class="container darker">
+<img src="https://as2.ftcdn.net/v2/jpg/03/13/41/79/1000_F_313417936_3yYpbAkSsYXGi8llKuhAgIF5H4rSdNgX.jpg" alt="Avatar" class="right" style="width:100%;">
+<p id = "utterence73"></p>
+<span id = "timestamp73" class="time-left"></span>
+</div>
+
+<div class="container">
+<img src="https://cdn.vectorstock.com/i/1000v/23/52/detective-avatar-icon-vector-9762352.avif" alt="Avatar" style="width:100%;">
+<p id = "utterence74"></p>
+<span id = "timestamp74" class="time-right"></span>
+</div>
+
+<div class="container darker">
+<img src="https://as2.ftcdn.net/v2/jpg/03/13/41/79/1000_F_313417936_3yYpbAkSsYXGi8llKuhAgIF5H4rSdNgX.jpg" alt="Avatar" class="right" style="width:100%;">
+<p id = "utterence75"></p>
+<span id = "timestamp75" class="time-left"></span>
+</div>
+
+<div class="container">
+<img src="https://cdn.vectorstock.com/i/1000v/23/52/detective-avatar-icon-vector-9762352.avif" alt="Avatar" style="width:100%;">
+<p id = "utterence76"></p>
+<span id = "timestamp76" class="time-right"></span>
+</div>
+
+<div class="container darker">
+<img src="https://as2.ftcdn.net/v2/jpg/03/13/41/79/1000_F_313417936_3yYpbAkSsYXGi8llKuhAgIF5H4rSdNgX.jpg" alt="Avatar" class="right" style="width:100%;">
+<p id = "utterence77"></p>
+<span id = "timestamp77" class="time-left"></span>
+</div>
+
+<div class="container">
+<img src="https://cdn.vectorstock.com/i/1000v/23/52/detective-avatar-icon-vector-9762352.avif" alt="Avatar" style="width:100%;">
+<p id = "utterence78"></p>
+<span id = "timestamp78" class="time-right"></span>
+</div>
+
+<div class="container darker">
+<img src="https://as2.ftcdn.net/v2/jpg/03/13/41/79/1000_F_313417936_3yYpbAkSsYXGi8llKuhAgIF5H4rSdNgX.jpg" alt="Avatar" class="right" style="width:100%;">
+<p id = "utterence79"></p>
+<span id = "timestamp79" class="time-left"></span>
+</div>                                                                              
+
+<script>
+    let SHEET_ID = "1Z5u3tDyxuFJpstk5s4o027sfZSNgClV6IrZIVQIgJC4";
+    let SHEET_TITLE = "Sheet1"
+    let SHEET_RANGE = "A2:D43"
+  
+    let FULL_URL =  ("https://docs.google.com/spreadsheets/d/" + SHEET_ID + "/gviz/tq?sheet=" + SHEET_TITLE + "&range=" +SHEET_RANGE);
+  
+    fetch(FULL_URL)
+    .then(res => res.text())
+    .then(rep =>{
+      let data = JSON.parse(rep.substr(47).slice(0,-2));
+      //console.log(data);
+  
+    //   let utterence = document.getElementById("utterence");
+    //   let timestamp = document.getElementById("timestamp");
+  
+    //   //to get the utterence
+    //   console.log(data.table.rows[11].c[3].v)
+    //   //to get the timestamp
+    //   console.log(data.table.rows[9].c[1].v)
+  
+    //   utterence.innerHTML = data.table.rows[10].c[3].v;
+    //   timestamp.innerHTML = data.table.rows[10].c[1].v;
+  
+      let length = data.table.rows.length-1;
+  
+      for(let i = 0; i<= length; i++){
+        let utterence = document.getElementById("utterence"+i)
+        let timestamp = document.getElementById("timestamp"+i)
+
+        utterence.innerHTML = data.table.rows[i].c[3].v;
+        timestamp.innerHTML = data.table.rows[i].c[1].v;
+      }
+    })
+  </script>
+
+</body>
+</html>
