@@ -1,0 +1,1432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimony Annotation Form</title>
+    <style>
+        body {
+            margin: 0 auto;
+            max-width: 1200px;
+            padding: 0 20px;
+        }
+
+        .container {
+            border: 2px solid #dedede;
+            background-color: #cfd0cf;
+            border-radius: 5px;
+            padding: 10px;
+            /* margin: 10px 0; */
+        }
+
+        .darker {
+            border-color: #ccc;
+            background-color: #e1e8e7;
+            margin-bottom: 0px;
+        }
+
+        .container::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .container img {
+            float: left;
+            max-width: 60px;
+            width: 100%;
+            margin-right: 20px;
+            border-radius: 50%;
+        }
+
+        .container img.right {
+            float: right;
+            margin-left: 20px;
+            margin-right: 0;
+        }
+
+        .aligncenter {
+            text-align: center;
+        }
+
+        .alignleft {
+
+            float: left;
+        }
+
+        .alignright {
+
+            float: right;
+        }
+
+        .time-right {
+            float: right;
+            color: #aaa;
+        }
+
+        .time-left {
+            float: left;
+            color: #999;
+        }
+
+        form {
+            width: 800px;
+            margin-left: 0px;
+            padding: 10px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .additional-form {
+            margin-top: 80px;
+            width: 1100px;
+            background: #fff;
+            border-radius: 8px;
+        }
+
+        div {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: inline-flex;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #1c1c1c;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        button {
+            display: block;
+            width: 70%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button#submit-1 {
+            width: 75%;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .relevance-container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .relevance-section {
+            flex: 1;
+            padding: 0 10px;
+        }
+
+        .relevance-section label,
+        .relevance-section select {
+            display: block;
+            width: 100%;
+        }
+
+        .horizontal-stack {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            max-width: 1100px;
+            margin-bottom: 20px;
+        }
+
+        .vertical-stack {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-right: 20px;
+            margin-bottom: 0px;
+            width: 800px;
+
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .event-form {
+            display: flex;
+            justify-content: center;
+        }
+
+        .submit-button {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1 class="aligncenter">Testimony Annotation</h1>
+        <div class="text-center">
+            <h2>INITIATION _ 2021 Award Winning Crime Thriller Short Film - Testimony 1</h2>
+        </div>
+        <br style="clear:both;" />
+    </div>
+
+    <div class="horizontal-stack">
+        <div class="vertical-stack">
+            <div class="container">
+                <img src="https://cdn.vectorstock.com/i/1000v/23/52/detective-avatar-icon-vector-9762352.avif"
+                    alt="Avatar" style="width:100%;">
+                <p id="utterence0"></p>
+                <span id="timestamp0" class="time-right"></span>
+            </div>
+
+            <div class="container darker">
+                <img src="https://as2.ftcdn.net/v2/jpg/03/13/41/79/1000_F_313417936_3yYpbAkSsYXGi8llKuhAgIF5H4rSdNgX.jpg"
+                    alt="Avatar" class="right" style="width:100%;">
+                <p id="utterence1"></p>
+                <span id="timestamp1" class="time-left"></span>
+            </div>
+        </div>
+
+        <form id="form0">
+            <div>
+                <h3>Labels: What is it that the above utterences describe about the event ? </h3>
+                <input type="checkbox" id="eventDetail" name="eventDetails" value="Detail">
+                <label for="eventDetail">Event Details</label><br>
+                <input type="checkbox" id="fact" name="facts" value="Fact">
+                <label for="fact1">Facts</label><br>
+                <input type="checkbox" id="appearance" name="appearance" value="Appearance">
+                <label for="appearance">Perpetrator's Appearance</label><br>
+                <input type="checkbox" id="filler1" name="fillers" value="Filler 1">
+                <label for="filler1">Introgation Filler</label><br>
+
+            </div>
+
+            <div>
+                <h3>Relevance Score (0-5): How much relevant it is to the overall understanding of the event ?</h3>
+
+                <div class="relevance-container">
+                    <div class="relevance-section">
+                        <label for="eventDetailsScore">Event Details Score:</label>
+                        <select id="eventDetailsScore" name="eventDetailsScore" required>
+                            <option>0</option>
+                            <option>0.5</option>
+                            <option>1</option>
+                            <option>1.5</option>
+                            <option>2</option>
+                            <option>2.5</option>
+                            <option>3</option>
+                            <option>3.5</option>
+                            <option>4</option>
+                            <option>4.5</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <div class="relevance-section">
+                        <label for="factScore">Fact Score:</label>
+                        <select id="factScore" name="factScore" required>
+                            <option>0</option>
+                            <option>0.5</option>
+                            <option>1</option>
+                            <option>1.5</option>
+                            <option>2</option>
+                            <option>2.5</option>
+                            <option>3</option>
+                            <option>3.5</option>
+                            <option>4</option>
+                            <option>4.5</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <div class="relevance-section">
+                        <label for="appearanceScore">Appearance Score:</label>
+                        <select id="appearanceScore" name="appearanceScore" required>
+                            <option>0</option>
+                            <option>0.5</option>
+                            <option>1</option>
+                            <option>1.5</option>
+                            <option>2</option>
+                            <option>2.5</option>
+                            <option>3</option>
+                            <option>3.5</option>
+                            <option>4</option>
+                            <option>4.5</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <div class="relevance-section">
+                        <label for="fillerScore">Filler Score:</label>
+                        <select id="fillerScore" name="fillerScore" required>
+                            <option>0</option>
+                            <option>0.5</option>
+                            <option>1</option>
+                            <option>1.5</option>
+                            <option>2</option>
+                            <option>2.5</option>
+                            <option>3</option>
+                            <option>3.5</option>
+                            <option>4</option>
+                            <option>4.5</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="horizontal-stack">
+        <div class="vertical-stack">
+            <div class="container">
+                <img src="https://cdn.vectorstock.com/i/1000v/23/52/detective-avatar-icon-vector-9762352.avif"
+                    alt="Avatar" style="width:100%;">
+                <p id="utterence2"></p>
+                <span id="timestamp2" class="time-right"></span>
+            </div>
+
+            <div class="container darker">
+                <img src="https://as2.ftcdn.net/v2/jpg/03/13/41/79/1000_F_313417936_3yYpbAkSsYXGi8llKuhAgIF5H4rSdNgX.jpg"
+                    alt="Avatar" class="right" style="width:100%;">
+                <p id="utterence3"></p>
+                <span id="timestamp3" class="time-left"></span>
+            </div>
+        </div>
+
+        <form id="form2">
+            <div>
+                <h3>Labels: What is it that the above utterences describe about the event ? </h3>
+                <input type="checkbox" id="eventDetail" name="eventDetails" value="Detail">
+                <label for="eventDetail">Event Details</label><br>
+                <input type="checkbox" id="fact" name="facts" value="Fact">
+                <label for="fact1">Facts</label><br>
+                <input type="checkbox" id="appearance" name="appearance" value="Appearance">
+                <label for="appearance">Perpetrator's Appearance</label><br>
+                <input type="checkbox" id="filler1" name="fillers" value="Filler 1">
+                <label for="filler1">Introgation Filler</label><br>
+
+            </div>
+
+            <div>
+                <h3>Relevance Score (0-5): How much relevant it is to the overall understanding of the event ?</h3>
+
+                <div class="relevance-container">
+                    <div class="relevance-section">
+                        <label for="eventDetailsScore">Event Details Score:</label>
+                        <select id="eventDetailsScore" name="eventDetailsScore" required>
+                            <option>0</option>
+                            <option>0.5</option>
+                            <option>1</option>
+                            <option>1.5</option>
+                            <option>2</option>
+                            <option>2.5</option>
+                            <option>3</option>
+                            <option>3.5</option>
+                            <option>4</option>
+                            <option>4.5</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <div class="relevance-section">
+                        <label for="factScore">Fact Score:</label>
+                        <select id="factScore" name="factScore" required>
+                            <option>0</option>
+                            <option>0.5</option>
+                            <option>1</option>
+                            <option>1.5</option>
+                            <option>2</option>
+                            <option>2.5</option>
+                            <option>3</option>
+                            <option>3.5</option>
+                            <option>4</option>
+                            <option>4.5</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <div class="relevance-section">
+                        <label for="appearanceScore">Appearance Score:</label>
+                        <select id="appearanceScore" name="appearanceScore" required>
+                            <option>0</option>
+                            <option>0.5</option>
+                            <option>1</option>
+                            <option>1.5</option>
+                            <option>2</option>
+                            <option>2.5</option>
+                            <option>3</option>
+                            <option>3.5</option>
+                            <option>4</option>
+                            <option>4.5</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <div class="relevance-section">
+                        <label for="fillerScore">Filler Score:</label>
+                        <select id="fillerScore" name="fillerScore" required>
+                            <option>0</option>
+                            <option>0.5</option>
+                            <option>1</option>
+                            <option>1.5</option>
+                            <option>2</option>
+                            <option>2.5</option>
+                            <option>3</option>
+                            <option>3.5</option>
+                            <option>4</option>
+                            <option>4.5</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </form>
+    </div>
+
+    <div class="horizontal-stack">
+        <div class="vertical-stack">
+            <div class="container">
+                <img src="https://cdn.vectorstock.com/i/1000v/23/52/detective-avatar-icon-vector-9762352.avif"
+                    alt="Avatar" style="width:100%;">
+                <p id="utterence4"></p>
+                <span id="timestamp4" class="time-right"></span>
+            </div>
+
+            <div class="container darker">
+                <img src="https://as2.ftcdn.net/v2/jpg/03/13/41/79/1000_F_313417936_3yYpbAkSsYXGi8llKuhAgIF5H4rSdNgX.jpg"
+                    alt="Avatar" class="right" style="width:100%;">
+                <p id="utterence5"></p>
+                <span id="timestamp5" class="time-left"></span>
+            </div>
+        </div>
+        <form id="form4">
+            <div>
+                <h3>Labels: What is it that the above utterences describe about the event ? </h3>
+                <input type="checkbox" id="eventDetail" name="eventDetails" value="Detail">
+                <label for="eventDetail">Event Details</label><br>
+                <input type="checkbox" id="fact" name="facts" value="Fact">
+                <label for="fact1">Facts</label><br>
+                <input type="checkbox" id="appearance" name="appearance" value="Appearance">
+                <label for="appearance">Perpetrator's Appearance</label><br>
+                <input type="checkbox" id="filler1" name="fillers" value="Filler 1">
+                <label for="filler1">Introgation Filler</label><br>
+
+            </div>
+
+            <div>
+                <h3>Relevance Score (0-5): How much relevant it is to the overall understanding of the event ?</h3>
+
+                <div class="relevance-container">
+                    <div class="relevance-section">
+                        <label for="eventDetailsScore">Event Details Score:</label>
+                        <select id="eventDetailsScore" name="eventDetailsScore" required>
+                            <option>0</option>
+                            <option>0.5</option>
+                            <option>1</option>
+                            <option>1.5</option>
+                            <option>2</option>
+                            <option>2.5</option>
+                            <option>3</option>
+                            <option>3.5</option>
+                            <option>4</option>
+                            <option>4.5</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <div class="relevance-section">
+                        <label for="factScore">Fact Score:</label>
+                        <select id="factScore" name="factScore" required>
+                            <option>0</option>
+                            <option>0.5</option>
+                            <option>1</option>
+                            <option>1.5</option>
+                            <option>2</option>
+                            <option>2.5</option>
+                            <option>3</option>
+                            <option>3.5</option>
+                            <option>4</option>
+                            <option>4.5</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <div class="relevance-section">
+                        <label for="appearanceScore">Appearance Score:</label>
+                        <select id="appearanceScore" name="appearanceScore" required>
+                            <option>0</option>
+                            <option>0.5</option>
+                            <option>1</option>
+                            <option>1.5</option>
+                            <option>2</option>
+                            <option>2.5</option>
+                            <option>3</option>
+                            <option>3.5</option>
+                            <option>4</option>
+                            <option>4.5</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <div class="relevance-section">
+                        <label for="fillerScore">Filler Score:</label>
+                        <select id="fillerScore" name="fillerScore" required>
+                            <option>0</option>
+                            <option>0.5</option>
+                            <option>1</option>
+                            <option>1.5</option>
+                            <option>2</option>
+                            <option>2.5</option>
+                            <option>3</option>
+                            <option>3.5</option>
+                            <option>4</option>
+                            <option>4.5</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </div>
+    </form>
+    </div>
+
+    <div class="horizontal-stack">
+        <div class="vertical-stack">
+            <div class="container">
+                <img src="https://cdn.vectorstock.com/i/1000v/23/52/detective-avatar-icon-vector-9762352.avif"
+                    alt="Avatar" style="width:100%;">
+                <p id="utterence6"></p>
+                <span id="timestamp6" class="time-right"></span>
+            </div>
+
+            <div class="container darker">
+                <img src="https://as2.ftcdn.net/v2/jpg/03/13/41/79/1000_F_313417936_3yYpbAkSsYXGi8llKuhAgIF5H4rSdNgX.jpg"
+                    alt="Avatar" class="right" style="width:100%;">
+                <p id="utterence7"></p>
+                <span id="timestamp7" class="time-left"></span>
+            </div>
+        </div>
+
+        <form id="form6">
+            <div>
+                <h3>Labels: What is it that the above utterences describe about the event ? </h3>
+                <input type="checkbox" id="eventDetail" name="eventDetails" value="Detail">
+                <label for="eventDetail">Event Details</label><br>
+                <input type="checkbox" id="fact" name="facts" value="Fact">
+                <label for="fact1">Facts</label><br>
+                <input type="checkbox" id="appearance" name="appearance" value="Appearance">
+                <label for="appearance">Perpetrator's Appearance</label><br>
+                <input type="checkbox" id="filler1" name="fillers" value="Filler 1">
+                <label for="filler1">Introgation Filler</label><br>
+
+            </div>
+
+            <div>
+                <h3>Relevance Score (0-5): How much relevant it is to the overall understanding of the event ?</h3>
+
+                <div class="relevance-container">
+                    <div class="relevance-section">
+                        <label for="eventDetailsScore">Event Details Score:</label>
+                        <select id="eventDetailsScore" name="eventDetailsScore" required>
+                            <option>0</option>
+                            <option>0.5</option>
+                            <option>1</option>
+                            <option>1.5</option>
+                            <option>2</option>
+                            <option>2.5</option>
+                            <option>3</option>
+                            <option>3.5</option>
+                            <option>4</option>
+                            <option>4.5</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <div class="relevance-section">
+                        <label for="factScore">Fact Score:</label>
+                        <select id="factScore" name="factScore" required>
+                            <option>0</option>
+                            <option>0.5</option>
+                            <option>1</option>
+                            <option>1.5</option>
+                            <option>2</option>
+                            <option>2.5</option>
+                            <option>3</option>
+                            <option>3.5</option>
+                            <option>4</option>
+                            <option>4.5</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <div class="relevance-section">
+                        <label for="appearanceScore">Appearance Score:</label>
+                        <select id="appearanceScore" name="appearanceScore" required>
+                            <option>0</option>
+                            <option>0.5</option>
+                            <option>1</option>
+                            <option>1.5</option>
+                            <option>2</option>
+                            <option>2.5</option>
+                            <option>3</option>
+                            <option>3.5</option>
+                            <option>4</option>
+                            <option>4.5</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <div class="relevance-section">
+                        <label for="fillerScore">Filler Score:</label>
+                        <select id="fillerScore" name="fillerScore" required>
+                            <option>0</option>
+                            <option>0.5</option>
+                            <option>1</option>
+                            <option>1.5</option>
+                            <option>2</option>
+                            <option>2.5</option>
+                            <option>3</option>
+                            <option>3.5</option>
+                            <option>4</option>
+                            <option>4.5</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </div>
+    </form>
+    </div>
+
+    <div class="horizontal-stack">
+        <div class="vertical-stack">
+            <div class="container">
+                <img src="https://cdn.vectorstock.com/i/1000v/23/52/detective-avatar-icon-vector-9762352.avif"
+                    alt="Avatar" style="width:100%;">
+                <p id="utterence8"></p>
+                <span id="timestamp8" class="time-right"></span>
+            </div>
+
+            <div class="container darker">
+                <img src="https://as2.ftcdn.net/v2/jpg/03/13/41/79/1000_F_313417936_3yYpbAkSsYXGi8llKuhAgIF5H4rSdNgX.jpg"
+                    alt="Avatar" class="right" style="width:100%;">
+                <p id="utterence9"></p>
+                <span id="timestamp9" class="time-left"></span>
+            </div>
+        </div>
+
+        <form id="form8">
+            <div>
+                <h3>Labels: What is it that the above utterences describe about the event ? </h3>
+                <input type="checkbox" id="eventDetail" name="eventDetails" value="Detail">
+                <label for="eventDetail">Event Details</label><br>
+                <input type="checkbox" id="fact" name="facts" value="Fact">
+                <label for="fact1">Facts</label><br>
+                <input type="checkbox" id="appearance" name="appearance" value="Appearance">
+                <label for="appearance">Perpetrator's Appearance</label><br>
+                <input type="checkbox" id="filler1" name="fillers" value="Filler 1">
+                <label for="filler1">Introgation Filler</label><br>
+
+            </div>
+
+            <div>
+                <h3>Relevance Score (0-5): How much relevant it is to the overall understanding of the event ?</h3>
+
+                <div class="relevance-container">
+                    <div class="relevance-section">
+                        <label for="eventDetailsScore">Event Details Score:</label>
+                        <select id="eventDetailsScore" name="eventDetailsScore" required>
+                            <option>0</option>
+                            <option>0.5</option>
+                            <option>1</option>
+                            <option>1.5</option>
+                            <option>2</option>
+                            <option>2.5</option>
+                            <option>3</option>
+                            <option>3.5</option>
+                            <option>4</option>
+                            <option>4.5</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <div class="relevance-section">
+                        <label for="factScore">Fact Score:</label>
+                        <select id="factScore" name="factScore" required>
+                            <option>0</option>
+                            <option>0.5</option>
+                            <option>1</option>
+                            <option>1.5</option>
+                            <option>2</option>
+                            <option>2.5</option>
+                            <option>3</option>
+                            <option>3.5</option>
+                            <option>4</option>
+                            <option>4.5</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <div class="relevance-section">
+                        <label for="appearanceScore">Appearance Score:</label>
+                        <select id="appearanceScore" name="appearanceScore" required>
+                            <option>0</option>
+                            <option>0.5</option>
+                            <option>1</option>
+                            <option>1.5</option>
+                            <option>2</option>
+                            <option>2.5</option>
+                            <option>3</option>
+                            <option>3.5</option>
+                            <option>4</option>
+                            <option>4.5</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <div class="relevance-section">
+                        <label for="fillerScore">Filler Score:</label>
+                        <select id="fillerScore" name="fillerScore" required>
+                            <option>0</option>
+                            <option>0.5</option>
+                            <option>1</option>
+                            <option>1.5</option>
+                            <option>2</option>
+                            <option>2.5</option>
+                            <option>3</option>
+                            <option>3.5</option>
+                            <option>4</option>
+                            <option>4.5</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </div>
+    </form>
+    </div>
+
+    <div class="horizontal-stack">
+        <div class="vertical-stack">
+            <div class="container">
+                <img src="https://cdn.vectorstock.com/i/1000v/23/52/detective-avatar-icon-vector-9762352.avif"
+                    alt="Avatar" style="width:100%;">
+                <p id="utterence10"></p>
+                <span id="timestamp10" class="time-right"></span>
+            </div>
+
+            <div class="container darker">
+                <img src="https://as2.ftcdn.net/v2/jpg/03/13/41/79/1000_F_313417936_3yYpbAkSsYXGi8llKuhAgIF5H4rSdNgX.jpg"
+                    alt="Avatar" class="right" style="width:100%;">
+                <p id="utterence11"></p>
+                <span id="timestamp11" class="time-left"></span>
+            </div>
+        </div>
+
+        <form id="form10">
+            <div>
+                <h3>Labels: What is it that the above utterences describe about the event ? </h3>
+                <input type="checkbox" id="eventDetail" name="eventDetails" value="Detail">
+                <label for="eventDetail">Event Details</label><br>
+                <input type="checkbox" id="fact" name="facts" value="Fact">
+                <label for="fact1">Facts</label><br>
+                <input type="checkbox" id="appearance" name="appearance" value="Appearance">
+                <label for="appearance">Perpetrator's Appearance</label><br>
+                <input type="checkbox" id="filler1" name="fillers" value="Filler 1">
+                <label for="filler1">Introgation Filler</label><br>
+
+            </div>
+
+            <div>
+                <h3>Relevance Score (0-5): How much relevant it is to the overall understanding of the event ?</h3>
+
+                <div class="relevance-container">
+                    <div class="relevance-section">
+                        <label for="eventDetailsScore">Event Details Score:</label>
+                        <select id="eventDetailsScore" name="eventDetailsScore" required>
+                            <option>0</option>
+                            <option>0.5</option>
+                            <option>1</option>
+                            <option>1.5</option>
+                            <option>2</option>
+                            <option>2.5</option>
+                            <option>3</option>
+                            <option>3.5</option>
+                            <option>4</option>
+                            <option>4.5</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <div class="relevance-section">
+                        <label for="factScore">Fact Score:</label>
+                        <select id="factScore" name="factScore" required>
+                            <option>0</option>
+                            <option>0.5</option>
+                            <option>1</option>
+                            <option>1.5</option>
+                            <option>2</option>
+                            <option>2.5</option>
+                            <option>3</option>
+                            <option>3.5</option>
+                            <option>4</option>
+                            <option>4.5</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <div class="relevance-section">
+                        <label for="appearanceScore">Appearance Score:</label>
+                        <select id="appearanceScore" name="appearanceScore" required>
+                            <option>0</option>
+                            <option>0.5</option>
+                            <option>1</option>
+                            <option>1.5</option>
+                            <option>2</option>
+                            <option>2.5</option>
+                            <option>3</option>
+                            <option>3.5</option>
+                            <option>4</option>
+                            <option>4.5</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <div class="relevance-section">
+                        <label for="fillerScore">Filler Score:</label>
+                        <select id="fillerScore" name="fillerScore" required>
+                            <option>0</option>
+                            <option>0.5</option>
+                            <option>1</option>
+                            <option>1.5</option>
+                            <option>2</option>
+                            <option>2.5</option>
+                            <option>3</option>
+                            <option>3.5</option>
+                            <option>4</option>
+                            <option>4.5</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </div>
+    </form>
+    </div>
+
+
+    <div class="horizontal-stack">
+        <div class="vertical-stack">
+            <div class="container">
+                <img src="https://cdn.vectorstock.com/i/1000v/23/52/detective-avatar-icon-vector-9762352.avif"
+                    alt="Avatar" style="width:100%;">
+                <p id="utterence12"></p>
+                <span id="timestamp12" class="time-right"></span>
+            </div>
+
+            <div class="container darker">
+                <img src="https://as2.ftcdn.net/v2/jpg/03/13/41/79/1000_F_313417936_3yYpbAkSsYXGi8llKuhAgIF5H4rSdNgX.jpg"
+                    alt="Avatar" class="right" style="width:100%;">
+                <p id="utterence13"></p>
+                <span id="timestamp13" class="time-left"></span>
+            </div>
+        </div>
+
+        <form id="form12">
+            <div>
+                <h3>Labels: What is it that the above utterences describe about the event ? </h3>
+                <input type="checkbox" id="eventDetail" name="eventDetails" value="Detail">
+                <label for="eventDetail">Event Details</label><br>
+                <input type="checkbox" id="fact" name="facts" value="Fact">
+                <label for="fact1">Facts</label><br>
+                <input type="checkbox" id="appearance" name="appearance" value="Appearance">
+                <label for="appearance">Perpetrator's Appearance</label><br>
+                <input type="checkbox" id="filler1" name="fillers" value="Filler 1">
+                <label for="filler1">Introgation Filler</label><br>
+
+            </div>
+
+            <div>
+                <h3>Relevance Score (0-5): How much relevant it is to the overall understanding of the event ?</h3>
+
+                <div class="relevance-container">
+                    <div class="relevance-section">
+                        <label for="eventDetailsScore">Event Details Score:</label>
+                        <select id="eventDetailsScore" name="eventDetailsScore" required>
+                            <option>0</option>
+                            <option>0.5</option>
+                            <option>1</option>
+                            <option>1.5</option>
+                            <option>2</option>
+                            <option>2.5</option>
+                            <option>3</option>
+                            <option>3.5</option>
+                            <option>4</option>
+                            <option>4.5</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <div class="relevance-section">
+                        <label for="factScore">Fact Score:</label>
+                        <select id="factScore" name="factScore" required>
+                            <option>0</option>
+                            <option>0.5</option>
+                            <option>1</option>
+                            <option>1.5</option>
+                            <option>2</option>
+                            <option>2.5</option>
+                            <option>3</option>
+                            <option>3.5</option>
+                            <option>4</option>
+                            <option>4.5</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <div class="relevance-section">
+                        <label for="appearanceScore">Appearance Score:</label>
+                        <select id="appearanceScore" name="appearanceScore" required>
+                            <option>0</option>
+                            <option>0.5</option>
+                            <option>1</option>
+                            <option>1.5</option>
+                            <option>2</option>
+                            <option>2.5</option>
+                            <option>3</option>
+                            <option>3.5</option>
+                            <option>4</option>
+                            <option>4.5</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <div class="relevance-section">
+                        <label for="fillerScore">Filler Score:</label>
+                        <select id="fillerScore" name="fillerScore" required>
+                            <option>0</option>
+                            <option>0.5</option>
+                            <option>1</option>
+                            <option>1.5</option>
+                            <option>2</option>
+                            <option>2.5</option>
+                            <option>3</option>
+                            <option>3.5</option>
+                            <option>4</option>
+                            <option>4.5</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </div>
+    </form>
+    </div>
+
+    <div class="horizontal-stack">
+        <div class="vertical-stack">
+            <div class="container">
+                <img src="https://cdn.vectorstock.com/i/1000v/23/52/detective-avatar-icon-vector-9762352.avif"
+                    alt="Avatar" style="width:100%;">
+                <p id="utterence14"></p>
+                <span id="timestamp14" class="time-right"></span>
+            </div>
+
+            <div class="container darker">
+                <img src="https://as2.ftcdn.net/v2/jpg/03/13/41/79/1000_F_313417936_3yYpbAkSsYXGi8llKuhAgIF5H4rSdNgX.jpg"
+                    alt="Avatar" class="right" style="width:100%;">
+                <p id="utterence15"></p>
+                <span id="timestamp15" class="time-left"></span>
+            </div>
+        </div>
+
+        <form id="form14">
+            <div>
+                <h3>Labels: What is it that the above utterences describe about the event ? </h3>
+                <input type="checkbox" id="eventDetail" name="eventDetails" value="Detail">
+                <label for="eventDetail">Event Details</label><br>
+                <input type="checkbox" id="fact" name="facts" value="Fact">
+                <label for="fact1">Facts</label><br>
+                <input type="checkbox" id="appearance" name="appearance" value="Appearance">
+                <label for="appearance">Perpetrator's Appearance</label><br>
+                <input type="checkbox" id="filler1" name="fillers" value="Filler 1">
+                <label for="filler1">Introgation Filler</label><br>
+
+            </div>
+
+            <div>
+                <h3>Relevance Score (0-5): How much relevant it is to the overall understanding of the event ?</h3>
+
+                <div class="relevance-container">
+                    <div class="relevance-section">
+                        <label for="eventDetailsScore">Event Details Score:</label>
+                        <select id="eventDetailsScore" name="eventDetailsScore" required>
+                            <option>0</option>
+                            <option>0.5</option>
+                            <option>1</option>
+                            <option>1.5</option>
+                            <option>2</option>
+                            <option>2.5</option>
+                            <option>3</option>
+                            <option>3.5</option>
+                            <option>4</option>
+                            <option>4.5</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <div class="relevance-section">
+                        <label for="factScore">Fact Score:</label>
+                        <select id="factScore" name="factScore" required>
+                            <option>0</option>
+                            <option>0.5</option>
+                            <option>1</option>
+                            <option>1.5</option>
+                            <option>2</option>
+                            <option>2.5</option>
+                            <option>3</option>
+                            <option>3.5</option>
+                            <option>4</option>
+                            <option>4.5</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <div class="relevance-section">
+                        <label for="appearanceScore">Appearance Score:</label>
+                        <select id="appearanceScore" name="appearanceScore" required>
+                            <option>0</option>
+                            <option>0.5</option>
+                            <option>1</option>
+                            <option>1.5</option>
+                            <option>2</option>
+                            <option>2.5</option>
+                            <option>3</option>
+                            <option>3.5</option>
+                            <option>4</option>
+                            <option>4.5</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <div class="relevance-section">
+                        <label for="fillerScore">Filler Score:</label>
+                        <select id="fillerScore" name="fillerScore" required>
+                            <option>0</option>
+                            <option>0.5</option>
+                            <option>1</option>
+                            <option>1.5</option>
+                            <option>2</option>
+                            <option>2.5</option>
+                            <option>3</option>
+                            <option>3.5</option>
+                            <option>4</option>
+                            <option>4.5</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </div>
+    </form>
+    </div>
+
+    <div class="horizontal-stack">
+        <div class="vertical-stack">
+            <div class="container">
+                <img src="https://cdn.vectorstock.com/i/1000v/23/52/detective-avatar-icon-vector-9762352.avif"
+                    alt="Avatar" style="width:100%;">
+                <p id="utterence16"></p>
+                <span id="timestamp16" class="time-right"></span>
+            </div>
+
+            <div class="container darker">
+                <img src="https://as2.ftcdn.net/v2/jpg/03/13/41/79/1000_F_313417936_3yYpbAkSsYXGi8llKuhAgIF5H4rSdNgX.jpg"
+                    alt="Avatar" class="right" style="width:100%;">
+                <p id="utterence17"></p>
+                <span id="timestamp17" class="time-left"></span>
+            </div>
+        </div>
+
+        <form id="form16">
+            <div>
+                <h3>Labels: What is it that the above utterences describe about the event ? </h3>
+                <input type="checkbox" id="eventDetail" name="eventDetails" value="Detail">
+                <label for="eventDetail">Event Details</label><br>
+                <input type="checkbox" id="fact" name="facts" value="Fact">
+                <label for="fact1">Facts</label><br>
+                <input type="checkbox" id="appearance" name="appearance" value="Appearance">
+                <label for="appearance">Perpetrator's Appearance</label><br>
+                <input type="checkbox" id="filler1" name="fillers" value="Filler 1">
+                <label for="filler1">Introgation Filler</label><br>
+
+            </div>
+
+            <div>
+                <h3>Relevance Score (0-5): How much relevant it is to the overall understanding of the event ?</h3>
+
+                <div class="relevance-container">
+                    <div class="relevance-section">
+                        <label for="eventDetailsScore">Event Details Score:</label>
+                        <select id="eventDetailsScore" name="eventDetailsScore" required>
+                            <option>0</option>
+                            <option>0.5</option>
+                            <option>1</option>
+                            <option>1.5</option>
+                            <option>2</option>
+                            <option>2.5</option>
+                            <option>3</option>
+                            <option>3.5</option>
+                            <option>4</option>
+                            <option>4.5</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <div class="relevance-section">
+                        <label for="factScore">Fact Score:</label>
+                        <select id="factScore" name="factScore" required>
+                            <option>0</option>
+                            <option>0.5</option>
+                            <option>1</option>
+                            <option>1.5</option>
+                            <option>2</option>
+                            <option>2.5</option>
+                            <option>3</option>
+                            <option>3.5</option>
+                            <option>4</option>
+                            <option>4.5</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <div class="relevance-section">
+                        <label for="appearanceScore">Appearance Score:</label>
+                        <select id="appearanceScore" name="appearanceScore" required>
+                            <option>0</option>
+                            <option>0.5</option>
+                            <option>1</option>
+                            <option>1.5</option>
+                            <option>2</option>
+                            <option>2.5</option>
+                            <option>3</option>
+                            <option>3.5</option>
+                            <option>4</option>
+                            <option>4.5</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <div class="relevance-section">
+                        <label for="fillerScore">Filler Score:</label>
+                        <select id="fillerScore" name="fillerScore" required>
+                            <option>0</option>
+                            <option>0.5</option>
+                            <option>1</option>
+                            <option>1.5</option>
+                            <option>2</option>
+                            <option>2.5</option>
+                            <option>3</option>
+                            <option>3.5</option>
+                            <option>4</option>
+                            <option>4.5</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </div>
+    </form>
+    </div>
+
+    <div class="horizontal-stack">
+        <div class="vertical-stack">
+            <div class="container">
+                <img src="https://cdn.vectorstock.com/i/1000v/23/52/detective-avatar-icon-vector-9762352.avif"
+                    alt="Avatar" style="width:100%;">
+                <p id="utterence18"></p>
+                <span id="timestamp18" class="time-right"></span>
+            </div>
+
+            <div class="container darker">
+                <img src="https://as2.ftcdn.net/v2/jpg/03/13/41/79/1000_F_313417936_3yYpbAkSsYXGi8llKuhAgIF5H4rSdNgX.jpg"
+                    alt="Avatar" class="right" style="width:100%;">
+                <p id="utterence19"></p>
+                <span id="timestamp19" class="time-left"></span>
+            </div>
+        </div>
+
+        <form id="form18">
+            <div>
+                <h3>Labels: What is it that the above utterences describe about the event ? </h3>
+                <input type="checkbox" id="eventDetail" name="eventDetails" value="Detail">
+                <label for="eventDetail">Event Details</label><br>
+                <input type="checkbox" id="fact" name="facts" value="Fact">
+                <label for="fact1">Facts</label><br>
+                <input type="checkbox" id="appearance" name="appearance" value="Appearance">
+                <label for="appearance">Perpetrator's Appearance</label><br>
+                <input type="checkbox" id="filler1" name="fillers" value="Filler 1">
+                <label for="filler1">Introgation Filler</label><br>
+
+            </div>
+
+            <div>
+                <h3>Relevance Score (0-5): How much relevant it is to the overall understanding of the event ?</h3>
+
+                <div class="relevance-container">
+                    <div class="relevance-section">
+                        <label for="eventDetailsScore">Event Details Score:</label>
+                        <select id="eventDetailsScore" name="eventDetailsScore" required>
+                            <option>0</option>
+                            <option>0.5</option>
+                            <option>1</option>
+                            <option>1.5</option>
+                            <option>2</option>
+                            <option>2.5</option>
+                            <option>3</option>
+                            <option>3.5</option>
+                            <option>4</option>
+                            <option>4.5</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <div class="relevance-section">
+                        <label for="factScore">Fact Score:</label>
+                        <select id="factScore" name="factScore" required>
+                            <option>0</option>
+                            <option>0.5</option>
+                            <option>1</option>
+                            <option>1.5</option>
+                            <option>2</option>
+                            <option>2.5</option>
+                            <option>3</option>
+                            <option>3.5</option>
+                            <option>4</option>
+                            <option>4.5</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <div class="relevance-section">
+                        <label for="appearanceScore">Appearance Score:</label>
+                        <select id="appearanceScore" name="appearanceScore" required>
+                            <option>0</option>
+                            <option>0.5</option>
+                            <option>1</option>
+                            <option>1.5</option>
+                            <option>2</option>
+                            <option>2.5</option>
+                            <option>3</option>
+                            <option>3.5</option>
+                            <option>4</option>
+                            <option>4.5</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <div class="relevance-section">
+                        <label for="fillerScore">Filler Score:</label>
+                        <select id="fillerScore" name="fillerScore" required>
+                            <option>0</option>
+                            <option>0.5</option>
+                            <option>1</option>
+                            <option>1.5</option>
+                            <option>2</option>
+                            <option>2.5</option>
+                            <option>3</option>
+                            <option>3.5</option>
+                            <option>4</option>
+                            <option>4.5</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </div>
+    </form>
+    </div>
+
+    <div class="horizontal-stack">
+        <div class="vertical-stack">
+            <div class="container">
+                <img src="https://cdn.vectorstock.com/i/1000v/23/52/detective-avatar-icon-vector-9762352.avif"
+                    alt="Avatar" style="width:100%;">
+                <p id="utterence20"></p>
+                <span id="timestamp20" class="time-right"></span>
+            </div>
+
+            <div class="container darker">
+                <img src="https://as2.ftcdn.net/v2/jpg/03/13/41/79/1000_F_313417936_3yYpbAkSsYXGi8llKuhAgIF5H4rSdNgX.jpg"
+                    alt="Avatar" class="right" style="width:100%;">
+                <p id="utterence21"></p>
+                <span id="timestamp21" class="time-left"></span>
+            </div>
+        </div>
+
+        <form id="form20">
+            <div>
+                <h3>Labels: What is it that the above utterences describe about the event ? </h3>
+                <input type="checkbox" id="eventDetail" name="eventDetails" value="Detail">
+                <label for="eventDetail">Event Details</label><br>
+                <input type="checkbox" id="fact" name="facts" value="Fact">
+                <label for="fact1">Facts</label><br>
+                <input type="checkbox" id="appearance" name="appearance" value="Appearance">
+                <label for="appearance">Perpetrator's Appearance</label><br>
+                <input type="checkbox" id="filler1" name="fillers" value="Filler 1">
+                <label for="filler1">Introgation Filler</label><br>
+
+            </div>
+
+            <div>
+                <h3>Relevance Score (0-5): How much relevant it is to the overall understanding of the event ?</h3>
+
+                <div class="relevance-container">
+                    <div class="relevance-section">
+                        <label for="eventDetailsScore">Event Details Score:</label>
+                        <select id="eventDetailsScore" name="eventDetailsScore" required>
+                            <option>0</option>
+                            <option>0.5</option>
+                            <option>1</option>
+                            <option>1.5</option>
+                            <option>2</option>
+                            <option>2.5</option>
+                            <option>3</option>
+                            <option>3.5</option>
+                            <option>4</option>
+                            <option>4.5</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <div class="relevance-section">
+                        <label for="factScore">Fact Score:</label>
+                        <select id="factScore" name="factScore" required>
+                            <option>0</option>
+                            <option>0.5</option>
+                            <option>1</option>
+                            <option>1.5</option>
+                            <option>2</option>
+                            <option>2.5</option>
+                            <option>3</option>
+                            <option>3.5</option>
+                            <option>4</option>
+                            <option>4.5</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <div class="relevance-section">
+                        <label for="appearanceScore">Appearance Score:</label>
+                        <select id="appearanceScore" name="appearanceScore" required>
+                            <option>0</option>
+                            <option>0.5</option>
+                            <option>1</option>
+                            <option>1.5</option>
+                            <option>2</option>
+                            <option>2.5</option>
+                            <option>3</option>
+                            <option>3.5</option>
+                            <option>4</option>
+                            <option>4.5</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <div class="relevance-section">
+                        <label for="fillerScore">Filler Score:</label>
+                        <select id="fillerScore" name="fillerScore" required>
+                            <option>0</option>
+                            <option>0.5</option>
+                            <option>1</option>
+                            <option>1.5</option>
+                            <option>2</option>
+                            <option>2.5</option>
+                            <option>3</option>
+                            <option>3.5</option>
+                            <option>4</option>
+                            <option>4.5</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    
+    <div class="submit-button">
+        <button type="submit" id="submit1" onclick="convertToJSON()">Submit Annotation</button>
+    </div>
+    <pre id="result"></pre>
+
+    </form>
+    </div>
+
+    <script>
+        let SHEET_ID = "1d7i484GAxKFYmjy97q0ImJGcT9A028Fqck8WI4wUT9A";
+        let SHEET_TITLE = "Sheet1"
+        let SHEET_RANGE = "A4:D25"
+
+        let FULL_URL = ("https://docs.google.com/spreadsheets/d/" + SHEET_ID + "/gviz/tq?sheet=" + SHEET_TITLE + "&range=" + SHEET_RANGE);
+
+        let length;
+
+        fetch(FULL_URL)
+            .then(res => res.text())
+            .then(rep => {
+                let data = JSON.parse(rep.substr(47).slice(0, -2));
+
+                length = data.table.rows.length - 1;
+
+                for (let i = 0; i <= length; i++) {
+                    let utterence = document.getElementById("utterence" + i)
+                    let timestamp = document.getElementById("timestamp" + i)
+
+                    utterence.innerHTML = data.table.rows[i].c[3].v;
+                    timestamp.innerHTML = data.table.rows[i].c[1].v;
+                }
+            })
+
+        function convertToJSON() {
+
+            const annotation = [];
+
+            for (i = 0; i <= length; i = i + 2) {
+                const interrogator = document.getElementById('utterence' + i).innerText;
+                const interrogee = document.getElementById('utterence' + (i + 1)).innerText;
+
+                const form = document.getElementById('form' + i);
+                const formData = new FormData(form);
+
+                const data = {
+                    Interrogator: interrogator,
+                    Interrogee: interrogee,
+                    Annotations: []
+                };
+
+                formData.forEach((value, key) => {
+                    if (key === 'eventDetails') {
+                        data.Annotations.push(["Event_Details", parseFloat(formData.get('eventDetailsScore'))]);;
+                    } else if (key === 'facts') {
+                        data.Annotations.push(["Facts", parseFloat(formData.get('factScore'))]);
+                    } else if (key === 'appearance') {
+                        data.Annotations.push(["Character_Description", parseFloat(formData.get('appearanceScore'))]);
+                    } else if (key === 'fillers') {
+                        data.Annotations.push(["Fillers", parseFloat(formData.get('fillerScore'))]);
+                    }
+                });
+
+                annotation.push(data);
+            }
+            let jsonString = JSON.stringify(annotation, null, 2);
+            const blob = new Blob([jsonString], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'E1T1.json';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        }
+    </script>
+</body>
+
+</html>
